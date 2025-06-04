@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0F0F0F;
+    color: #EAEAEA;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.profile-page-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.profile-header h1 {
+    color: #E50914;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    grid-template-areas:
+        "info reviews"
+        "watched watchlist";
+    gap: 25px;
+}
+
+@media (max-width: 900px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "info"
+            "reviews"
+            "watched"
+            "watchlist";
+    }
+}
+
+.card {
+    background-color: #1C1C1C;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2F2F2F;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h2 {
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid #3a3a3a;
+    padding-bottom: 10px;
+}
+
+.user-info-section { grid-area: info; }
+.user-reviews-section { grid-area: reviews; }
+.user-watched-section { grid-area: watched; }
+.user-watchlist-section { grid-area: watchlist; }
+
+.user-info-section .info-content {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+
+@media (min-width: 600px) { 
+    .user-info-section .info-content {
+        flex-direction: row; 
+        align-items: flex-start;
+    }
+    .profile-pic-container {
+        flex-basis: 180px; 
+        flex-shrink: 0;
+    }
+    #userInfoForm {
+        flex-grow: 1;
+    }
+}
+
+.profile-pic-container {
+    text-align: center;
+    margin-bottom: 15px; 
+}
+
+#profilePicImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3a3a3a;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #C5C5C5;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #2B2B2B;
+    border: 1px solid #3A3A3A;
+    border-radius: 4px;
+    color: #F0F0F0;
+    font-size: 0.95em;
+}
+
+.form-group input:disabled {
+    background-color: #252525; 
+    color: #888888;
+    cursor: not-allowed;
+}
+.form-group input.non-editable { 
+     background-color: #202020;
+     color: #a0a0a0;
+     font-style: italic;
+}
+
+.form-group input:focus:not(:disabled) { 
+    outline: none;
+    border-color: #E50914;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.25);
+}
+
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background-color: #E50914;
+    color: #FFFFFF;
+}
+.btn-primary:hover {
+    background-color: #F6121D;
+}
+
+.btn-danger {
+    background-color: #7f1d1d; 
+    color: #f0f0f0;
+}
+.btn-danger:hover {
+    background-color: #a52a2a;
+}
+
+#changePicBtn {
+    background-color: #333;
+    color: #ccc;
+    display: block;
+    margin: 0 auto;
+}
+#changePicBtn:hover {
+    background-color: #444;
+}
+
+.logout-container {
+    margin-top: 25px;          
+    padding-top: 20px;         
+    border-top: 1px solid #3a3a3a;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.scrollable-list {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 8px; 
+    flex-grow: 1;
+}
+
+.scrollable-list::-webkit-scrollbar {
+    width: 8px;
+}
+.scrollable-list::-webkit-scrollbar-track {
+    background: #1C1C1C;
+    border-radius: 10px;
+}
+.scrollable-list::-webkit-scrollbar-thumb {
+    background-color: #444444;
+    border-radius: 10px;
+    border: 2px solid #1C1C1C;
+}
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+}
+
+/* Seção de Avaliações do Usuário - Estilos Atualizados e Novos */
+.review-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #2a2a2a;
+}
+.review-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.review-item img {
+    width: 70px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.review-item-content {
+    flex-grow: 1;
+    min-width: 0;
+    position: relative; 
+    padding-top: 25px;
+}
+.review-item-content h4 {
+    color: #EAEAEA;
+    font-size: 1em;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.review-options-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10; 
+}
+
+/* Estilos para a exibição da nota numérica */
+.user-rating-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.rating-label {
+    color: #C5C5C5;
+    font-weight: 500;
+}
+
+.rating-score-box {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #FFFFFF; 
+    font-size: 1em; 
+    min-width: 30px;
+    text-align: center;
+}
+
+.rating-high {
+    background-color: #28a745;
+    color: #FFFFFF;
+}
+
+.rating-medium {
+    background-color: #ffc107;
+    color: #1c1c1c;
+}
+
+.rating-low {
+    background-color: #dc3545;
+    color: #FFFFFF;
+}
+
+.rating-max {
+    color: #888888;
+}
+/* FIM DOS NOVOS ESTILOS DE NOTA */
+
+.review-item-content .review-text-sample {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    font-style: italic;
+    margin-top: 4px;
+    white-space: normal;
+    word-wrap: break-word; 
+}
+
+.movies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    gap: 15px;
+    position: relative;
+}
+
+.movie-list-item {
+    background-color: #252525;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie-list-item img {
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie-list-item h4 {
+    font-size: 0.85em;
+    color: #cccccc;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: auto;
+}
+
+.movie-item-actions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+}
+
+.options-btn {
+    background-color: rgba(28, 28, 28, 0.7);
+    color: #cccccc;
+    border: none;
+    border-radius: 50%; 
+    width: 28px;      
+    height: 28px;
+    padding: 0;
+    font-size: 14px;   
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.options-btn:hover {
+    background-color: rgba(40, 40, 40, 0.9);
+    color: #ffffff;
+}
+
+.options-menu {
+    display: none;
+    position: absolute;
+    top: 32px; 
+    right: 0;
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 100;
+    min-width: 180px; 
+}
+
+.options-menu.active { /* Classe para mostrar o menu via JS */
+    display: block;
+}
+
+.menu-option {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    color: #EAEAEA;
+    text-align: left;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.menu-option:hover {
+    background-color: #383838;
+}
+
+.menu-option:not(:last-child) {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/* Estilos para a seção de ações da avaliação (curtir/descurtir) */
+.review-item-actions {
+    margin-top: 12px; 
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.review-item-actions .action-btn {
+    background-color: transparent; 
+    border: none; 
+    color: #888888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    font-size: 0.85em;
+    transition: color 0.2s ease;
+}
+
+.review-item-actions .action-btn:hover {
+    color: #EAEAEA;
+}
+
+.review-item-actions .action-btn i {
+    font-size: 1.1em;
+    margin-right: 6px;
+}

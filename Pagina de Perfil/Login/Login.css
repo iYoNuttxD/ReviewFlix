@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0F0F0F;
+    color: #EAEAEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #1C1C1C;
+    padding: 25px 35px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 430px;
+    border: 1px solid #2F2F2F;
+}
+
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+.container::-webkit-scrollbar-track {
+    background: #1C1C1C;
+    border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: #444444;
+    border-radius: 10px;
+    border: 2px solid #1C1C1C;
+}
+.container::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+}
+
+header h1 {
+    color: #E50914;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.4em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 500;
+    color: #C5C5C5;
+}
+
+/* Estilo base para inputs de formulário */
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #2B2B2B;
+    border: 1px solid #3A3A3A;
+    border-radius: 4px;
+    color: #F0F0F0;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.form-group input::placeholder {
+    color: #888888;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #E50914;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.25);
+}
+
+/* Wrapper da Senha com ícone */
+.password-wrapper {
+    position: relative;
+    display: flex;      
+    align-items: center; 
+    width: 100%;        
+}
+
+/* Estilo específico para inputs DENTRO do .password-wrapper */
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+    flex-grow: 1;
+    padding-right: 45px;
+    background-color: #2B2B2B;
+    border: 1px solid #3A3A3A;
+    border-radius: 4px;
+    color: #F0F0F0;
+    font-size: 1em;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;       
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #B3B3B3;
+    font-size: 1.2em;
+    user-select: none;
+    z-index: 2;         
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #E50914;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.05em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 25px;
+}
+
+button[type="submit"]:hover {
+    background-color: #F6121D;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #B3B3B3;
+}
+
+.register-link a {
+    color: #FFFFFF;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - ReviewFlix</title>
+    <link rel="stylesheet" href="Cadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>REVIEWFLIX</h1>
+        </header>
+        <main>
+            <h2>Crie sua Conta</h2>
+            <form id="signupForm">
+                <div class="form-group profile-pic-group">
+                    <label for="profilePic" class="profile-pic-label">
+                        <div id="profilePicPreview" class="profile-pic-placeholder">
+                            <span>+</span>
+                        </div>
+                        <p>Adicionar foto (opcional)</p>
+                    </label>
+                    <input type="file" id="profilePic" name="profilePic" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Nome Completo</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Seu nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Data de Nascimento</label>
+                    <input type="date" id="birthDate" name="birthDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('password', this)">👁️</span>
+                    </div>
+                    <div id="passwordStrength" class="password-strength-indicator">
+                        <div id="strengthBar" class="strength-bar"></div>
+                        <span id="strengthText">Força da senha:</span>
+                    </div>
+                     <small class="password-hint">Mínimo 8 caracteres. Use maiúsculas, minúsculas, números e símbolos para uma senha forte.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirme sua Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('confirmPassword', this)">👁️</span>
+                    </div>
+                    <div id="passwordMatchMessage" class="password-match-message"></div>
+                </div>
+
+                <button type="submit" id="submitButton" disabled>Cadastrar</button>
+            </form>
+            <p class="login-link">Já tem uma conta? <a href="/Login/Login.html">Entrar</a></p>
+        </main>
+    </div>
+    <script src="Cadastro.js"></script>
+</body>
+</html>
