@@ -1,4 +1,3 @@
-/* Perfil.css - CORRIGIDO para rolagem horizontal e menus de seção */
 * {
     margin: 0;
     padding: 0;
@@ -55,7 +54,7 @@ body {
     border: 1px solid #2F2F2F;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Importante para conter elementos internos */
+    overflow: hidden;
 }
 
 /* Cabeçalho da Seção com Título e Botão de Opções (para Filmes Assistidos/Para Assistir) */
@@ -71,14 +70,14 @@ body {
 .section-header-actions h2 {
     color: #FFFFFF;
     font-weight: 500;
-    margin-bottom: 0; /* Remove margem padrão do h2 */
-    border-bottom: none; /* Remove borda padrão do h2 */
-    padding-bottom: 0; /* Remove padding padrão do h2 */
+    margin-bottom: 0;
+    border-bottom: none; 
+    padding-bottom: 0; 
     flex-grow: 1;
 }
 
 .section-options-trigger { /* Container para o botão de opções da seção */
-    position: relative; /* Para o posicionamento do menu dropdown */
+    position: relative; 
 }
 
 
@@ -88,7 +87,7 @@ body {
 .user-watched-section { grid-area: watched; }
 .user-watchlist-section { grid-area: watchlist; }
 
-/* H2 específico para user-reviews-section (pois não usa .section-header-actions) */
+/* H2 específico para user-reviews-section */
 .user-reviews-section > h2 {
     color: #FFFFFF;
     margin-bottom: 20px;
@@ -191,20 +190,19 @@ body {
 /* --- LISTAS DE FILMES HORIZONTAIS (CORRIGIDO) --- */
 .horizontal-scroll-wrapper {
     position: relative;
-    display: flex; /* Alinha botões e lista */
+    display: flex;
     align-items: center;
-    margin-top: 0px; /* O .section-header-actions já tem margin-bottom */
-    /* padding: 0 30px; Removido para os botões ficarem nas bordas do card */
+    margin-top: 0px;
 }
 
 .movies-list.horizontal-movies {
-    display: flex;         /* CRUCIAL: para itens ficarem em linha */
-    flex-direction: row;   /* CRUCIAL: direção da linha */
-    flex-wrap: nowrap;     /* CRUCIAL: impede que os itens quebrem para baixo */
-    overflow-x: hidden;    /* Esconde a barra de rolagem nativa, rolagem via JS */
+    display: flex;         
+    flex-direction: row;   
+    flex-wrap: nowrap;     
+    overflow-x: hidden;    
     scroll-behavior: smooth;
-    width: 100%;           /* Ocupa o espaço disponível */
-    padding: 10px 5px;     /* Padding interno para a lista, ajustado para não encostar nas setas */
+    width: 100%;           
+    padding: 10px 5px;     
     gap: 15px;
 }
 
@@ -215,9 +213,8 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    flex: 0 0 auto;   /* Importante para manter a largura definida */
-    width: 120px;     /* Largura de cada item */
-    /* position: relative; NÃO MAIS NECESSÁRIO AQUI, pois o botão de opções é da seção */
+    flex: 0 0 auto;   
+    width: 120px;     
 }
 
 .movie-list-item img {
@@ -243,14 +240,14 @@ body {
     transition: background-color 0.2s ease, opacity 0.2s ease; opacity: 0.6;
 }
 .scroll-arrow:hover { background-color: rgba(45, 45, 45, 0.9); opacity: 1; }
-.scroll-arrow.prev-arrow { left: -10px; } /* Ajustado para ficar um pouco para fora ou na borda */
-.scroll-arrow.next-arrow { right: -10px; } /* Ajustado para ficar um pouco para fora ou na borda */
+.scroll-arrow.prev-arrow { left: -10px; } 
+.scroll-arrow.next-arrow { right: -10px; }
 .scroll-arrow.hidden { display: none; }
 
 
 /* Estilos para o menu de opções ("três pontinhos") */
 .options-btn {
-    background-color: rgba(28, 28, 28, 0.0); /* Sutil para botões de seção */
+    background-color: rgba(28, 28, 28, 0.0); 
     color: #888888;
     border: none;
     border-radius: 4px;
@@ -262,7 +259,7 @@ body {
 
 .options-menu {
     display: none; position: absolute;
-    top: 100%; /* Abaixo do botão no .section-options-trigger */
+    top: 100%;
     right: 0;
     margin-top: 5px;
     background-color: #2a2a2a; border: 1px solid #3a3a3a; border-radius: 4px;
@@ -270,10 +267,9 @@ body {
     min-width: 200px;
     list-style: none; padding: 5px 0;
 }
-/* Posicionamento específico para o menu dentro da avaliação (se o botão de opções for posicionado diferente) */
+/* Posicionamento específico para o menu dentro da avaliação */
 .review-options-container .options-menu {
-    top: 30px; /* Se o botão de opções da avaliação for menor e posicionado no topo do content */
-    /* right: 0; */ /* já herdado */
+    top: 30px; 
 }
 .options-menu.active { display: block; }
 

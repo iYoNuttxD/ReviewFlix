@@ -1,11 +1,10 @@
-// Perfil.js
 document.addEventListener('DOMContentLoaded', function () {
     // Verifica o status de login primeiro
     const activeUserEmail = localStorage.getItem('reviewFlixActiveUserEmail');
 
     if (!activeUserEmail) {
         alert('Você não está logado. Redirecionando para a página de login.');
-        window.location.href = 'Login.html'; // Caminho relativo
+        window.location.href = '/Login/Login.html';
         return; 
     }
 
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!currentUser) {
         alert('Erro ao carregar dados do usuário. Redirecionando para login.');
         localStorage.removeItem('reviewFlixActiveUserEmail');
-        window.location.href = 'Login.html'; // Caminho relativo
+        window.location.href = '/Login/Login.html';
         return;
     }
 
@@ -98,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         logoutBtn.addEventListener('click', function() {
             localStorage.removeItem('reviewFlixActiveUserEmail'); 
             alert('Você foi deslogado. Redirecionando...');
-            window.location.href = 'Login.html'; // Caminho relativo
+            window.location.href = '/Login/Login.html';
         });
     }
 
@@ -141,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function updateScrollButtonsState() {
-            if (!moviesList.offsetParent) return; // Não atualiza se a lista não estiver visível (pode acontecer em abas, etc.)
+            if (!moviesList.offsetParent) return; // Não atualiza se a lista não estiver visíve
             const scrollLeft = moviesList.scrollLeft;
             const maxScrollLeft = moviesList.scrollWidth - moviesList.clientWidth;
             
