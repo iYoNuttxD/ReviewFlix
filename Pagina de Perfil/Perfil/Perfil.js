@@ -4,48 +4,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const activeUserEmail = localStorage.getItem('reviewFlixActiveUserEmail');
 
     if (!activeUserEmail) {
-        // Se não estiver logado, usa alert e redireciona
         alert('Você não está logado. Redirecionando para a página de login.');
-        window.location.href = '/Login/Login.html';
-        return; // Para a execução do script se não estiver logado
+        window.location.href = 'Login.html'; // Caminho relativo
+        return; 
     }
 
-    // Se estiver logado, prossegue com a configuração da página de perfil
     const allUsersData = JSON.parse(localStorage.getItem('reviewFlixAllUsers')) || {};
     let currentUser = allUsersData[activeUserEmail];
 
-    // Segurança extra: se o email ativo não tiver dados correspondentes
     if (!currentUser) {
         alert('Erro ao carregar dados do usuário. Redirecionando para login.');
         localStorage.removeItem('reviewFlixActiveUserEmail');
-        window.location.href = '/Login/Login.html';
+        window.location.href = 'Login.html'; // Caminho relativo
         return;
     }
 
-    // Elementos do formulário de informações do usuário
+    // Elementos do DOM
     const editInfoBtn = document.getElementById('editInfoBtn');
     const saveInfoBtn = document.getElementById('saveInfoBtn');
     const userInfoForm = document.getElementById('userInfoForm');
-    
     const fullNameField = document.getElementById('fullName');
     const birthDateField = document.getElementById('birthDate');
     const emailField = document.getElementById('email');
     const profilePicImg = document.getElementById('profilePicImg');
-    
-    // Inputs que podem ser editados (todos exceto email)
-    const formInputsForEditing = userInfoForm ? userInfoForm.querySelectorAll('input:not(#email)') : []; 
-
-    // Elementos para upload da foto de perfil
+    const formInputsForEditing = userInfoForm ? userInfoForm.querySelectorAll('input:not(#email)') : [];
     const profilePicUpload = document.getElementById('profilePicUpload');
     const changePicBtn = document.getElementById('changePicBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
     
-    // Botão de Logout
-    const logoutBtn = document.getElementById('logoutBtn'); 
-    
-    // Variável para armazenar a nova foto de perfil em Base64 antes de salvar
-    let newProfilePicBase64 = currentUser.profilePic || ''; 
+    let newProfilePicBase64 = currentUser.profilePic || '';
 
-    // Função para carregar os dados do usuário nos campos da página
     function loadUserProfileData() {
         if(fullNameField) fullNameField.value = currentUser.fullName || '';
         if(emailField) emailField.value = currentUser.email || ''; 
@@ -54,58 +42,43 @@ document.addEventListener('DOMContentLoaded', function () {
         if (profilePicImg && currentUser.profilePic && currentUser.profilePic.startsWith('data:image')) {
             profilePicImg.src = currentUser.profilePic;
         } else if (profilePicImg) {
-            // Se não houver foto no localStorage ou não for base64, usa o placeholder
             profilePicImg.src = 'https://placehold.co/150x150?text=Foto'; 
         }
     }
 
-    // Carrega os dados do perfil do usuário ao iniciar a página
     loadUserProfileData(); 
 
-    // Event listener para o botão "Editar Dados"
-    if (editInfoBtn) {
+    if (editInfoBtn && saveInfoBtn && userInfoForm && formInputsForEditing.length > 0) {
         editInfoBtn.addEventListener('click', function () {
-            if(formInputsForEditing.length > 0) {
-                formInputsForEditing.forEach(input => input.disabled = false);
-            }
+            formInputsForEditing.forEach(input => input.disabled = false);
             editInfoBtn.style.display = 'none';
-            if(saveInfoBtn) saveInfoBtn.style.display = 'inline-block';
+            saveInfoBtn.style.display = 'inline-block';
         });
-    }
 
-    // Event listener para o formulário "Salvar Alterações"
-    if (userInfoForm && saveInfoBtn) {
         userInfoForm.addEventListener('submit', function (event) {
             event.preventDefault(); 
             
-            // Atualiza o objeto currentUser com os novos valores
             currentUser.fullName = fullNameField.value;
             currentUser.birthDate = birthDateField.value;
             
-            // Atualiza a foto de perfil no objeto 'currentUser' se uma nova foi carregada
             if (newProfilePicBase64 && newProfilePicBase64.startsWith('data:image')) {
                 currentUser.profilePic = newProfilePicBase64;
             }
 
-            // Atualiza este usuário dentro do objeto allUsersData
             allUsersData[activeUserEmail] = currentUser;
-            // Salva o objeto allUsersData (contendo todos os usuários) atualizado de volta no localStorage
             localStorage.setItem('reviewFlixAllUsers', JSON.stringify(allUsersData)); 
             
-            if(formInputsForEditing.length > 0) {
-                formInputsForEditing.forEach(input => input.disabled = true);
-            }
+            formInputsForEditing.forEach(input => input.disabled = true);
             saveInfoBtn.style.display = 'none';
-            if(editInfoBtn) editInfoBtn.style.display = 'inline-block';
+            editInfoBtn.style.display = 'inline-block';
             
             alert('Informações atualizadas e salvas localmente!');
         });
     }
 
-    // Event listener para o botão "Alterar Foto" e input de arquivo
     if(changePicBtn && profilePicUpload) {
         changePicBtn.addEventListener('click', function() {
-            profilePicUpload.click();
+            profilePicUpload.click(); 
         });
 
         profilePicUpload.addEventListener('change', function(event) {
@@ -114,43 +87,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     if(profilePicImg) profilePicImg.src = e.target.result;
-                    newProfilePicBase64 = e.target.result; // Armazena a nova foto em base64 para ser salva ao submeter o formulário
+                    newProfilePicBase64 = e.target.result; 
                 }
                 reader.readAsDataURL(file);
             }
         });
     }
 
-    // Lógica para o botão de Deslogar
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function() {
             localStorage.removeItem('reviewFlixActiveUserEmail'); 
-
             alert('Você foi deslogado. Redirecionando...');
-            window.location.href = '/Login/Login.html';
+            window.location.href = 'Login.html'; // Caminho relativo
         });
     }
 
-    // Lógica para os menus de opções ("três pontinhos") dos filmes
+    // Lógica para os menus de opções ("três pontinhos")
     const allOptionsBtns = document.querySelectorAll('.options-btn');
 
     allOptionsBtns.forEach(btn => {
         btn.addEventListener('click', function (event) {
-            event.stopPropagation(); // Impede que o clique se propague e feche o menu imediatamente
-            
-            const currentMenu = this.nextElementSibling;
-            
-            // Fecha todos os outros menus que possam estar abertos
+            event.stopPropagation(); 
+            const currentMenu = this.nextElementSibling; 
             closeAllOptionMenus(currentMenu); 
-            
-            // Alterna o menu específico deste botão
             if (currentMenu && currentMenu.classList.contains('options-menu')) {
                 currentMenu.classList.toggle('active');
             }
         });
     });
 
-    // Função para fechar todos os menus de opções, exceto o especificado
     function closeAllOptionMenus(exceptThisMenu) {
         document.querySelectorAll('.options-menu.active').forEach(menu => {
             if (menu !== exceptThisMenu) {
@@ -159,11 +124,50 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Fecha os menus se clicar em qualquer lugar fora deles
     document.addEventListener('click', function (event) {
-        // Se o clique não foi em um botão de opções nem dentro de um menu aberto
         if (!event.target.closest('.options-btn') && !event.target.closest('.options-menu.active')) {
-            closeAllOptionMenus(null); // Fecha todos os menus
+            closeAllOptionMenus(null); 
         }
     });
+
+    // Lógica para rolagem horizontal das listas de filmes
+    function setupHorizontalScroll(listId, prevBtnId, nextBtnId) {
+        const moviesList = document.getElementById(listId);
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
+
+        if (!moviesList || !prevBtn || !nextBtn) {
+            return;
+        }
+
+        function updateScrollButtonsState() {
+            if (!moviesList.offsetParent) return; // Não atualiza se a lista não estiver visível (pode acontecer em abas, etc.)
+            const scrollLeft = moviesList.scrollLeft;
+            const maxScrollLeft = moviesList.scrollWidth - moviesList.clientWidth;
+            
+            prevBtn.classList.toggle('hidden', scrollLeft <= 1);
+            nextBtn.classList.toggle('hidden', scrollLeft >= maxScrollLeft - 1);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            const itemWidth = moviesList.querySelector('.movie-list-item')?.offsetWidth || 120;
+            const gap = 15; 
+            moviesList.scrollLeft -= (itemWidth + gap) * 2; // Rola por aprox. 2 itens
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const itemWidth = moviesList.querySelector('.movie-list-item')?.offsetWidth || 120;
+            const gap = 15;
+            moviesList.scrollLeft += (itemWidth + gap) * 2; // Rola por aprox. 2 itens
+        });
+
+        moviesList.addEventListener('scroll', updateScrollButtonsState);
+        
+        // Um pequeno timeout para garantir que o layout foi calculado antes do primeiro update dos botões
+        setTimeout(updateScrollButtonsState, 100); 
+        window.addEventListener('resize', updateScrollButtonsState);
+    }
+
+    setupHorizontalScroll('watchedMoviesList', 'watchedPrevBtn', 'watchedNextBtn');
+    setupHorizontalScroll('watchlistMoviesList', 'watchlistPrevBtn', 'watchlistNextBtn');
 });

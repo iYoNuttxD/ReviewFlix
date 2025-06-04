@@ -115,64 +115,67 @@
             </section>
 
             <section class="user-watched-section card">
-                <h2>Filmes Assistidos</h2>
-                <div class="movies-list scrollable-list">
-                    <div class="movie-list-item">
-                        <img src="https://placehold.co/100x150?text=Assistido+1" alt="Poster Assistido 1">
-                        <h4>Título do Filme Assistido 1</h4>
-                        <div class="movie-item-actions">
-                            <button class="options-btn" aria-label="Mais opções">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="options-menu">
-                                <button class="menu-option remove-from-watched">Remover da lista</button>
-                            </div>
+                <div class="section-header-actions">
+                    <h2>Filmes Assistidos</h2>
+                    <div class="section-options-trigger">
+                        <button class="options-btn" aria-label="Opções da lista de filmes assistidos">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="options-menu">
+                            <button class="menu-option">Remover da lista</button>
                         </div>
                     </div>
-                    <div class="movie-list-item">
-                        <img src="https://placehold.co/100x150?text=Assistido+2" alt="Poster Assistido 2">
-                        <h4>Filme Muito Bom 2</h4>
-                        <div class="movie-item-actions">
-                            <button class="options-btn" aria-label="Mais opções">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="options-menu">
-                                <button class="menu-option remove-from-watched">Remover da lista</button>
-                            </div>
+                </div>
+                <div class="horizontal-scroll-wrapper">
+                    <button class="scroll-arrow prev-arrow" id="watchedPrevBtn" aria-label="Anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="movies-list horizontal-movies" id="watchedMoviesList">
+                        <div class="movie-list-item">
+                            <img src="https://placehold.co/100x150?text=Assistido+1" alt="Poster Assistido 1">
+                            <h4>Título do Filme Assistido 1</h4>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="https://placehold.co/100x150?text=Assistido+2" alt="Poster Assistido 2">
+                            <h4>Filme Muito Bom 2</h4>
                         </div>
                     </div>
+                    <button class="scroll-arrow next-arrow" id="watchedNextBtn" aria-label="Próximo">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </section>
 
             <section class="user-watchlist-section card">
-                <h2>Para Assistir</h2>
-                <div class="movies-list scrollable-list">
-                     <div class="movie-list-item">
-                        <img src="https://placehold.co/100x150?text=Lista+1" alt="Poster Lista 1">
-                        <h4>Quero Ver Este Filme 1</h4>
-                        <div class="movie-item-actions">
-                            <button class="options-btn" aria-label="Mais opções">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="options-menu">
-                                <button class="menu-option mark-as-watched">Marcar como assistido</button>
-                                <button class="menu-option remove-from-watchlist">Remover da lista</button>
-                            </div>
+                <div class="section-header-actions">
+                    <h2>Para Assistir</h2>
+                    <div class="section-options-trigger">
+                        <button class="options-btn" aria-label="Opções da lista para assistir">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="options-menu">
+                            <button class="menu-option">Marcar como assistido</button>
+                            <button class="menu-option">Remover da lista</button>
                         </div>
                     </div>
-                    <div class="movie-list-item">
-                        <img src="https://placehold.co/100x150?text=Lista+2" alt="Poster Lista 2">
-                        <h4>Próximo da Lista 2</h4>
-                        <div class="movie-item-actions">
-                            <button class="options-btn" aria-label="Mais opções">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="options-menu">
-                                <button class="menu-option mark-as-watched">Marcar como assistido</button>
-                                <button class="menu-option remove-from-watchlist">Remover da lista</button>
-                            </div>
+                </div>
+                <div class="horizontal-scroll-wrapper">
+                    <button class="scroll-arrow prev-arrow" id="watchlistPrevBtn" aria-label="Anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="movies-list horizontal-movies" id="watchlistMoviesList">
+                        <div class="movie-list-item">
+                            <img src="https://placehold.co/100x150?text=Lista+1" alt="Poster Lista 1">
+                            <h4>Quero Ver Este Filme 1</h4>
+                        </div>
+                        <div class="movie-list-item">
+                            <img src="https://placehold.co/100x150?text=Lista+2" alt="Poster Lista 2">
+                            <h4>Próximo da Lista 2</h4>
                         </div>
                     </div>
+                    <button class="scroll-arrow next-arrow" id="watchlistNextBtn" aria-label="Próximo">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </section>
         </main>
