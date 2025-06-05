@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!activeUserEmail) {
         alert('Você não está logado. Redirecionando para a página de login.');
-        window.location.href = '/Login/Login.html';
+        window.location.href = '../Login/Login.html';
         return; 
     }
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!currentUser) {
         alert('Erro ao carregar dados do usuário. Redirecionando para login.');
         localStorage.removeItem('reviewFlixActiveUserEmail');
-        window.location.href = '/Login/Login.html';
+        window.location.href = '../Login/Login.html';
         return;
     }
 
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         logoutBtn.addEventListener('click', function() {
             localStorage.removeItem('reviewFlixActiveUserEmail'); 
             alert('Você foi deslogado. Redirecionando...');
-            window.location.href = '/Login/Login.html';
+            window.location.href = '../Login/Login.html';
         });
     }
 

@@ -1,4 +1,3 @@
-// Cadastro.js
 document.addEventListener('DOMContentLoaded', function () {
     const signupForm = document.getElementById('signupForm');
     const fullNameInput = document.getElementById('fullName');
@@ -168,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('reviewFlixActiveUserEmail', newEmail); // Define usuário atual como logado
 
         alert('Cadastro realizado com sucesso! Redirecionando para o perfil...');
-        window.location.href = '/Perfil/Perfil.html'; // Caminho relativo
+        window.location.href = '../Perfil/Perfil.html';
     });
 });
 

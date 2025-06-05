@@ -1,4 +1,3 @@
-// Login.js
 document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (enteredPassword === storedUser.password) {
                 localStorage.setItem('reviewFlixActiveUserEmail', storedUser.email);
                 alert('Login realizado com sucesso! Redirecionando para o perfil...');
-                window.location.href = '/Perfil/Perfil.html';
+                window.location.href = '../Perfil/Perfil.html';
             } else {
                 alert('Senha incorreta. Tente novamente.');
             }
