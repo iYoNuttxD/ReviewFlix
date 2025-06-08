@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes: A Origem - ReviewFlix</title>
+
+    <link rel="stylesheet" href="Details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="details-container">
+        <section class="main-info-grid">
+            <div class="poster-actions-block">
+                <img src="https://br.web.img2.acsta.net/c_300_300/img/e5/aa/e5aa44fd2ca36fa73bb5f4fc46f92d73.jpg" alt="Pôster do Filme A Origem" class="poster">
+                <div class="user-actions">
+                    <button id="watchedBtn"><i class="fas fa-check-circle"></i> Marcar como Assistido</button>
+                    <button id="watchlistBtn">
+                        <i id="watchlistIcon" class="fas fa-plus-circle"></i>
+                        <span id="watchlistText">Adicionar à Lista</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="details-content-block">
+                <div class="title-header">
+                    <h1>A Origem (2010)</h1>
+                    <div class="main-movie-rating">
+                        <div class="rating-score-box rating-high">
+                            <span>8.8</span>
+                        </div>
+                        <span class="rating-max">/ 10</span>
+                    </div>
+                </div>
+
+                <span class="media-type">Filme</span>
+
+                <div class="metadata">
+                    <span class="rating-badge">14+</span>
+                    <span class="duration"><i class="fas fa-clock"></i> 2h 28min</span>
+                </div>
+
+                <div class="synopsis">
+                    <h2>Descrição</h2>
+                    <p>Dominick Cobb é um ladrão que rouba informações valiosas do subconsciente das pessoas durante o sono, quando suas mentes estão mais vulneráveis. Ele recebe uma última chance de redenção ao tentar o inverso: implantar uma ideia na mente de um CEO.</p>
+                </div>
+
+                <div class="crew-info">
+                    <div class="directors">
+                        <h3>Diretor</h3>
+                        <p>Christopher Nolan</p>
+                    </div>
+                    <div class="actors">
+                        <h3>Elenco Principal</h3>
+                        <p>Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="media-section">
+            <div class="media-trailer">
+                <h2>Trailer</h2>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=E2hJlVoUD70" 
+                        title="Trailer Oficial de A Origem (2010)" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="media-photos">
+                <h2>Fotos</h2>
+                <div class="photo-gallery">
+                    <img src="https://br.web.img2.acsta.net/c_300_300/medias/nmedia/18/72/34/14/19439304.jpg" alt="A Origem Foto 1">
+                    <img src="https://br.web.img3.acsta.net/c_300_300/medias/nmedia/18/72/34/14/19439303.jpg" alt="A Origem Foto 2">
+                    <img src="https://br.web.img3.acsta.net/c_300_300/medias/nmedia/18/72/34/14/19473197.jpg" alt="A Origem Foto 3">
+                </div>
+            </div>
+        </section>
+
+        <section class="ratings-section">
+            <div class="new-reviews-grid">
+                <div class="review-form-section">
+                    <h3>Deixe sua Avaliação</h3>
+                    <form id="review-form">
+                        <div class="form-group">
+                            <label for="user-score-input-inception">Sua Nota (0 - 10):</label>
+                            <input type="number" id="user-score-input-inception" name="user-score" min="0" max="10" step="0.1" placeholder="Ex: 8.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-comment-input-inception">Seu Comentário:</label>
+                            <textarea id="user-comment-input-inception" name="user-comment" rows="5" placeholder="O que você achou do filme?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit-review">Postar Avaliação</button>
+                    </form>
+                </div>
+                <div class="all-reviews-section">
+                    <h3>Avaliações de Usuários</h3>
+                    <div class="reviews-list-display">
+                        <div class="user-review-item">
+                            <div class="review-author">
+                                <img src="https://i.pravatar.cc/40?u=user2" alt="Foto de Usuário 2">
+                                <span>Pedro L.</span>
+                            </div>
+                            <div class="user-rating-container">
+                                <div class="rating-score-box rating-high">
+                                    <span>9.2</span>
+                                </div>
+                                <span class="rating-max">/ 10</span>
+                            </div>
+                            <p>"Um filme que te faz pensar muito, com uma trama complexa e atuações brilhantes. Nolan se superou!"</p>
+                            <div class="feedback-actions">
+                                <button class="like-btn"><i class="fas fa-thumbs-up"></i> <span>180</span></button>
+                                <button class="dislike-btn"><i class="fas fa-thumbs-down"></i> <span>10</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const watchedBtn = document.getElementById('watchedBtn');
+            const watchlistBtn = document.getElementById('watchlistBtn');
+            const watchlistIcon = document.getElementById('watchlistIcon');
+            const watchlistText = document.getElementById('watchlistText');
+
+            if(watchedBtn) {
+                watchedBtn.addEventListener('click', function() {
+                    watchedBtn.classList.toggle('active');
+                });
+            }
+
+            if(watchlistBtn) {
+                watchlistBtn.addEventListener('click', function() {
+                    watchlistBtn.classList.toggle('active');
+
+                    if (watchlistBtn.classList.contains('active')) {
+                        watchlistIcon.className = 'fas fa-check-circle';
+                        watchlistText.textContent = 'Na Lista';
+                    } else {
+                        watchlistIcon.className = 'fas fa-plus-circle';
+                        watchlistText.textContent = 'Adicionar à Lista';
+                    }
+                });
+            }
+
+            const reviewsContainer = document.querySelector('.reviews-list-display');
+
+            if (reviewsContainer) {
+                reviewsContainer.addEventListener('click', function(event) {
+                    const clickedLikeBtn = event.target.closest('.like-btn');
+                    if (clickedLikeBtn) {
+                        const reviewItem = clickedLikeBtn.closest('.user-review-item');
+                        const dislikeBtnInSameReview = reviewItem.querySelector('.dislike-btn');
+                        
+                        clickedLikeBtn.classList.toggle('active');
+                        if (dislikeBtnInSameReview) {
+                            dislikeBtnInSameReview.classList.remove('active');
+                        }
+                        return;
+                    }
+
+                    const clickedDislikeBtn = event.target.closest('.dislike-btn');
+                    if (clickedDislikeBtn) {
+                        const reviewItem = clickedDislikeBtn.closest('.user-review-item');
+                        const likeBtnInSameReview = reviewItem.querySelector('.like-btn');
+
+                        clickedDislikeBtn.classList.toggle('active');
+                        if (likeBtnInSameReview) {
+                            likeBtnInSameReview.classList.remove('active');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
