@@ -5,14 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil - ReviewFlix</title>
     <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="../../Navbar/navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/" class="nav-back-link" aria-label="Voltar para Home">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <div class="nav-center">
+            <span class="nav-title">REVIEWFLIX</span>
+        </div>
+        <div class="nav-right">
+            <a href="#" id="nav-profile-link" class="nav-profile-link">
+                <div class="nav-profile">
+                    <img src="https://placehold.co/40x40?text=L" alt="Perfil" id="nav-profile-pic">
+                    <span id="nav-profile-name">Login</span>
+                </div>
+            </a>
+        </div>
+    </nav>
+
     <div class="profile-page-container">
-        <header class="profile-header">
-            <h1>REVIEWFLIX</h1>
-        </header>
         <main class="profile-grid">
             <section class="user-info-section card">
                 <h2>Meus Dados</h2>
@@ -25,15 +43,15 @@
                     <form id="userInfoForm">
                         <div class="form-group">
                             <label for="fullName">Nome Completo:</label>
-                            <input type="text" id="fullName" name="fullName" value="Usuário Exemplo" disabled>
+                            <input type="text" id="fullName" name="fullName" disabled>
                         </div>
                         <div class="form-group">
                             <label for="birthDate">Data de Nascimento:</label>
-                            <input type="date" id="birthDate" name="birthDate" value="2000-01-01" disabled>
+                            <input type="date" id="birthDate" name="birthDate" disabled>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" value="usuario@exemplo.com" disabled class="non-editable">
+                            <input type="email" id="email" name="email" disabled class="non-editable">
                         </div>
                         <div class="form-actions">
                             <button type="button" id="editInfoBtn" class="btn">Editar Dados</button>
@@ -41,145 +59,60 @@
                         </div>
                     </form>
                 </div>
-                    <div class="logout-container">
-                        <button type="button" id="logoutBtn" class="btn btn-danger">Deslogar</button>
-                    </div>
+                <div class="logout-container">
+                    <button type="button" id="logoutBtn" class="btn btn-danger">Deslogar</button>
+                </div>
             </section>
 
             <section class="user-reviews-section card">
                 <h2>Minhas Avaliações</h2>
-                <div class="reviews-list scrollable-list">
-                    <div class="review-item">
-                        <img src="https://placehold.co/80x120?text=Filme+1" alt="Poster Filme 1">
-                        <div class="review-item-content">
-                            <div class="review-options-container">
-                                <button class="options-btn" aria-label="Opções da avaliação">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                </button>
-                                <div class="options-menu">
-                                    <button class="menu-option edit-review-btn">Editar avaliação</button>
-                                    <button class="menu-option delete-review-btn">Remover avaliação</button>
-                                </div>
-                            </div>
-                            <h4>Título do Filme Avaliado 1</h4>
-                            <div class="user-rating-container">
-                                <span class="rating-label">Sua Nota:</span>
-                                <div class="rating-score-box rating-high">
-                                    <span>8.7</span>
-                                </div>
-                                <span class="rating-max">/10</span>
-                            </div>
-                            <p class="review-text-sample">Este filme foi incrível por causa de X, Y e Z. Uma experiência cinematográfica memorável que prendeu minha atenção do início ao fim.</p>
-                            <div class="review-item-actions">
-                                <button class="action-btn like-btn" aria-label="Curtir">
-                                    <i class="fas fa-thumbs-up"></i> <span class="like-count">125</span>
-                                </button>
-                                <button class="action-btn dislike-btn" aria-label="Descurtir">
-                                    <i class="fas fa-thumbs-down"></i> <span class="dislike-count">12</span>
-                                </button>
-                            </div>
-                        </div>
+                <div class="reviews-list scrollable-list" id="reviews-container">
                     </div>
-                    <div class="review-item">
-                        <img src="https://placehold.co/80x120?text=Filme+2" alt="Poster Filme 2">
-                        <div class="review-item-content">
-                            <div class="review-options-container">
-                                <button class="options-btn" aria-label="Opções da avaliação">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                </button>
-                                <div class="options-menu">
-                                    <button class="menu-option edit-review-btn">Editar avaliação</button>
-                                    <button class="menu-option delete-review-btn">Remover avaliação</button>
-                                </div>
-                            </div>
-                            <h4>Um Outro Filme Longo 2</h4>
-                            <div class="user-rating-container">
-                                <span class="rating-label">Sua Nota:</span>
-                                <div class="rating-score-box rating-medium">
-                                    <span>6.5</span>
-                                </div>
-                                <span class="rating-max">/10</span>
-                            </div>
-                             <p class="review-text-sample">Gostei bastante, mas o final poderia ser melhor e alguns arcos de personagens ficaram um pouco corridos.</p>
-                            <div class="review-item-actions">
-                                <button class="action-btn like-btn" aria-label="Curtir">
-                                    <i class="fas fa-thumbs-up"></i> <span class="like-count">88</span>
-                                </button>
-                                <button class="action-btn dislike-btn" aria-label="Descurtir">
-                                    <i class="fas fa-thumbs-down"></i> <span class="dislike-count">30</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </section>
 
             <section class="user-watched-section card">
-                <div class="section-header-actions">
+                <div class="section-header-actions" id="watched-header">
                     <h2>Filmes Assistidos</h2>
                     <div class="section-options-trigger">
                         <button class="options-btn" aria-label="Opções da lista de filmes assistidos">
                             <i class="fas fa-ellipsis-v"></i>
                         </button>
                         <div class="options-menu">
-                            <button class="menu-option">Remover da lista</button>
+                            <button class="menu-option" data-action="remove-watched">Remover selecionados</button>
                         </div>
                     </div>
                 </div>
                 <div class="horizontal-scroll-wrapper">
-                    <button class="scroll-arrow prev-arrow" id="watchedPrevBtn" aria-label="Anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
+                    <button class="scroll-arrow prev-arrow" id="watchedPrevBtn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                     <div class="movies-list horizontal-movies" id="watchedMoviesList">
-                        <div class="movie-list-item">
-                            <img src="https://placehold.co/100x150?text=Assistido+1" alt="Poster Assistido 1">
-                            <h4>Título do Filme Assistido 1</h4>
                         </div>
-                        <div class="movie-list-item">
-                            <img src="https://placehold.co/100x150?text=Assistido+2" alt="Poster Assistido 2">
-                            <h4>Filme Muito Bom 2</h4>
-                        </div>
-                    </div>
-                    <button class="scroll-arrow next-arrow" id="watchedNextBtn" aria-label="Próximo">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                    <button class="scroll-arrow next-arrow" id="watchedNextBtn" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </section>
 
             <section class="user-watchlist-section card">
-                <div class="section-header-actions">
+                <div class="section-header-actions" id="watchlist-header">
                     <h2>Para Assistir</h2>
                     <div class="section-options-trigger">
                         <button class="options-btn" aria-label="Opções da lista para assistir">
                             <i class="fas fa-ellipsis-v"></i>
                         </button>
                         <div class="options-menu">
-                            <button class="menu-option">Marcar como assistido</button>
-                            <button class="menu-option">Remover da lista</button>
+                            <button class="menu-option" data-action="move-to-watched">Marcar como assistido</button>
+                            <button class="menu-option" data-action="remove-watchlist">Remover da lista</button>
                         </div>
                     </div>
                 </div>
                 <div class="horizontal-scroll-wrapper">
-                    <button class="scroll-arrow prev-arrow" id="watchlistPrevBtn" aria-label="Anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
+                    <button class="scroll-arrow prev-arrow" id="watchlistPrevBtn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                     <div class="movies-list horizontal-movies" id="watchlistMoviesList">
-                        <div class="movie-list-item">
-                            <img src="https://placehold.co/100x150?text=Lista+1" alt="Poster Lista 1">
-                            <h4>Quero Ver Este Filme 1</h4>
                         </div>
-                        <div class="movie-list-item">
-                            <img src="https://placehold.co/100x150?text=Lista+2" alt="Poster Lista 2">
-                            <h4>Próximo da Lista 2</h4>
-                        </div>
-                    </div>
-                    <button class="scroll-arrow next-arrow" id="watchlistNextBtn" aria-label="Próximo">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                    <button class="scroll-arrow next-arrow" id="watchlistNextBtn" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </section>
         </main>
     </div>
     <script src="perfil.js"></script>
+    <script src="../../Navbar/navbar.js"></script>
 </body>
 </html>
