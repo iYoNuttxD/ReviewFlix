@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const activeUserEmail = localStorage.getItem('reviewFlixActiveUserEmail');
 
-    const profilePagePath = "/Pagina de Perfil/Perfil/Perfil.html";
-    const loginPagePath = "/Pagina de Perfil/Login/Login.html";
+    const profilePagePath = "Pagina de Perfil/Perfil/Perfil.html";
+    const loginPagePath = "Pagina de Perfil/Login/Login.html";
 
     if (activeUserEmail && navProfileLink) {
         const allUsersData = JSON.parse(localStorage.getItem('reviewFlixAllUsers')) || {};
