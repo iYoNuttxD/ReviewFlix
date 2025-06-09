@@ -1,3 +1,4 @@
+/* --- Estilos da Barra de Navegação --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -10,15 +11,18 @@
     margin-bottom: 20px;
 }
 
+/* --- Elementos da Navbar --- */
 .nav-left, .nav-right {
-    flex: 1;
+    flex: 1; /* Define uma base de largura igual para os lados */
 }
 
+/* CORREÇÃO: Faz o container central ocupar o espaço restante e centraliza o texto */
 .nav-center {
-    flex: 2;
+    flex-grow: 1; /* Permite que o centro cresça para ocupar o espaço */
     text-align: center;
 }
 
+/* --- Estilo dos Links e Ícones --- */
 .nav-back-link, .nav-profile-link {
     color: #EAEAEA;
     text-decoration: none;
@@ -33,6 +37,37 @@
     font-size: 1.6em;
 }
 
+.search-container {
+    position: relative;
+    max-width: 350px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+#search-input {
+    background-color: #2B2B2B;
+    border: 1px solid #3A3A3A;
+    border-radius: 20px;
+    color: #EAEAEA;
+    padding: 8px 15px 8px 40px;
+    width: 100%;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #E50914;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.25);
+}
+
+/* --- Título do Site --- */
 .nav-title {
     font-size: 2.2em;
     font-weight: 700;
@@ -40,6 +75,7 @@
     letter-spacing: 1px;
 }
 
+/* --- Seção do Perfil (Direita) --- */
 .nav-right {
     display: flex;
     justify-content: flex-end;

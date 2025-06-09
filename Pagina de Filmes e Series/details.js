@@ -23,12 +23,35 @@ document.addEventListener('DOMContentLoaded', function () {
     let reviewBeingEditedId = null;
 
     function initializePage() {
+        updateMainMovieRatingColor();
         if (currentUser) {
             setupLoggedInState();
         } else {
             setupLoggedOutState();
         }
         loadAndRenderReviews();
+    }
+
+        function updateMainMovieRatingColor() {
+        const ratingScoreBox = document.querySelector('.main-movie-rating .rating-score-box');
+        if (!ratingScoreBox) return;
+
+        const scoreSpan = ratingScoreBox.querySelector('span');
+        if (!scoreSpan) return;
+
+        const score = parseFloat(scoreSpan.textContent);
+
+        // Remove classes de avaliação existentes para evitar conflitos
+        ratingScoreBox.classList.remove('rating-high', 'rating-medium', 'rating-low');
+
+        // Adiciona a classe apropriada com base na pontuação
+        if (score >= 8) {
+            ratingScoreBox.classList.add('rating-high');
+        } else if (score >= 6) {
+            ratingScoreBox.classList.add('rating-medium');
+        } else {
+            ratingScoreBox.classList.add('rating-low');
+        }
     }
 
     function setupLoggedOutState() {
@@ -193,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
         reviewForm.reset();
     }
     function enterEditMode(review) {
+        unlockReviewForm();
         isEditMode = true;
         reviewBeingEditedId = review.reviewId;
         reviewFormSection.classList.add('editing-review');
