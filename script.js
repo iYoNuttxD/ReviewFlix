@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const movieDatabase = {
         "avengers-endgame-2019": { title: "Vingadores: Ultimato (2019)", posterUrl: "https://m.media-amazon.com/images/I/816O7WbRGCL._AC_UF894,1000_QL80_.jpg", type: "movie", rating: 8.4, detailsUrl: "../Pagina de Filmes e Series/Details.html" },
-        "a-origem-2010": { title: "A Origem (2010)", posterUrl: "https://br.web.img2.acsta.net/c_300_300/img/e5/aa/e5aa44fd2ca36fa73bb5f4fc46f92d73.jpg", type: "movie", rating: 8.8, detailsUrl: "../Pagina de Filmes e Series/Aorigem.html" },
+        "a-origem-2010": { title: "A Origem (2010)", posterUrl: "https://images.justwatch.com/poster/241712232/s718/a-origem.jpg", type: "movie", rating: 8.8, detailsUrl: "../Pagina de Filmes e Series/Aorigem.html" },
         "homem-aranha-no-aranhaverso-2018": { title: "Homem-Aranha no Aranhaverso", posterUrl: "https://br.web.img3.acsta.net/pictures/18/12/05/16/28/3718855.jpg", type: "movie", rating: 8.4, detailsUrl: "../Pagina de Filmes e Series/Homemaranha.html"},
         "duna-2021": { title: "Duna (2021)", posterUrl: "https://ingresso-a.akamaihd.net/prd/img/movie/duna/509b75e4-2826-47aa-8a6e-127873685961.jpg", type: "movie", rating: 8.0, detailsUrl: "../Pagina de Filmes e Series/duna.html" },
         "forrest-gump-1994": { title: "Forrest Gump (1994)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDYwNzVjMTItZmU5YS00YjQ5LTljYjgtMjY2NDVmYWMyNWFmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", type: "movie", rating: 8.8, detailsUrl: "../Pagina de Filmes e Series/forestgump.html" },
