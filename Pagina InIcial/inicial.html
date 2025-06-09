@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVIEWFLIX - Reviews de Filmes e Séries</title>
+    <link rel="stylesheet" href="inicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <a href="#" class="logo">REVIEWFLIX</a>
+                <nav>
+                    <ul>
+                        <li><a href="#filmes">Filmes</a></li>
+                        <li><a href="#series">Séries</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Pesquisar...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="filmes" class="content-grid">
+            <div class="container">
+                <h2>Filmes</h2>
+                <div class="grid">
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="titanic.html">
+                                <img src="https://m.media-amazon.com/images/I/91WlTjCgu4L.jpg" alt="Pôster de Titanic">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-medium">7.9</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">Titanic</h3>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://br.web.img3.acsta.net/pictures/18/12/05/16/28/3718855.jpg" alt="Pôster de Homem-Aranha: No Aranhaverso">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-high">8.4</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">Homem-Aranha: No Aranhaverso</h3>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://br.web.img3.acsta.net/pictures/14/10/31/20/39/476171.jpg" alt="Pôster de Interestelar">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-high">8.7</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">Interestelar</h3>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://ingresso-a.akamaihd.net/prd/img/movie/duna/509b75e4-2826-47aa-8a6e-127873685961.jpg" alt="Pôster de Duna">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-medium">7.9</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">Duna</h3>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://m.media-amazon.com/images/M/MV5BYTRmMjkwYzYtYTRiMi00NDJjLTk1NjctMDA3MjY2ZWIyMGQ5XkEyXkFqcGc@._V1_.jpg" alt="Pôster de O Poderoso Chefão">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-high">9.2</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">O Poderoso Chefão</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="series" class="content-grid">
+            <div class="container">
+                <h2>Séries</h2>
+                <div class="grid">
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://br.web.img3.acsta.net/pictures/14/03/31/19/28/462555.jpg" alt="Pôster de Breaking Bad">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-high">8.9</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">Breaking Bad</h3>
+                        </div>
+                    </article>
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://m.media-amazon.com/images/M/MV5BZjQwYzBlYzUtZjhhOS00ZDQ0LWE0NzAtYTk4MjgzZTNkZWEzXkEyXkFqcGc@._V1_.jpg" alt="Pôster de The Office">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-high">9.0</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">The Office</h3>
+                        </div>
+                    </article>
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://m.media-amazon.com/images/M/MV5BMjg2NmM0MTEtYWY2Yy00NmFlLTllNTMtMjVkZjEwMGVlNzdjXkEyXkFqcGc@._V1_.jpg" alt="Pôster de Stranger Things">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                           <div class="card-meta">
+                                <div class="rating rating-high">8.7</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">Stranger Things</h3>
+                        </div>
+                    </article>
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://m.media-amazon.com/images/M/MV5BMTNhMDJmNmYtNDQ5OS00ODdlLWE0ZDAtZTgyYTIwNDY3OTU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pôster de Game of Thrones">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-high">9.3</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">Game of Thrones</h3>
+                        </div>
+                    </article>
+                    <article class="grid-item">
+                        <div class="card-image">
+                            <a href="#">
+                                <img src="https://m.media-amazon.com/images/M/MV5BOTU2YmM5ZjctOGVlMC00YTczLTljM2MtYjhlNGI5YWMyZjFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pôster de Friends">
+                            </a>
+                            <div class="add-to-watchlist"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <div class="rating rating-high">8.4</div>
+                                <div class="favorite"><i class="far fa-star"></i></div>
+                            </div>
+                            <h3 class="card-title">Friends</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="sobre">
+        <div class="container">
+            <p>&copy; 2025 REVIEWFLIX. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script do Menu Hamburguer
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('header nav');
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Script da Barra de Pesquisa Funcional
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const gridItems = document.querySelectorAll('.grid-item');
+
+            searchInput.addEventListener('keyup', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+
+                gridItems.forEach(item => {
+                    const title = item.querySelector('.card-title').textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
